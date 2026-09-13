@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import { GithubIcon, LinkedinIcon, MailIcon } from './icons';
 
-const NAV_LINKS = ['Projects', 'Experience', 'Skills'];
+const NAV_LINKS = [
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+];
+
+const GITHUB_URL = 'https://github.com/Abhinavsureshav';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/abhinav-av-0a2b97202/';
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -25,21 +33,48 @@ export function Navbar() {
 
         <nav className="hidden items-center text-[23px] text-black md:flex">
           {NAV_LINKS.map((link, i) => (
-            <span key={link}>
-              <a href={`#${link.toLowerCase()}`} className="transition-opacity hover:opacity-60">
-                {link}
+            <span key={link.label}>
+              <a href={link.href} className="transition-opacity hover:opacity-60">
+                {link.label}
               </a>
               {i < NAV_LINKS.length - 1 && <span>{', '}</span>}
             </span>
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden text-[23px] text-black underline underline-offset-2 transition-opacity hover:opacity-60 md:block"
-        >
-          Get in touch
-        </a>
+        <div className="hidden items-center gap-5 md:flex">
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="text-black transition-opacity hover:opacity-60"
+          >
+            <GithubIcon size={22} />
+          </a>
+          <a
+            href="mailto:sureshabhinav8@gmail.com"
+            aria-label="Email"
+            className="text-black transition-opacity hover:opacity-60"
+          >
+            <MailIcon size={22} />
+          </a>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="text-black transition-opacity hover:opacity-60"
+          >
+            <LinkedinIcon size={22} />
+          </a>
+          <a
+            href="#contact"
+            className="text-[23px] text-black underline underline-offset-2 transition-opacity hover:opacity-60"
+          >
+            Get in touch
+          </a>
+        </div>
 
         <button
           type="button"
@@ -76,12 +111,12 @@ export function Navbar() {
       >
         {NAV_LINKS.map((link) => (
           <a
-            key={link}
-            href={`#${link.toLowerCase()}`}
+            key={link.label}
+            href={link.href}
             onClick={() => setOpen(false)}
             className="text-[32px] font-medium text-black"
           >
-            {link}
+            {link.label}
           </a>
         ))}
         <a
@@ -91,6 +126,36 @@ export function Navbar() {
         >
           Get in touch
         </a>
+        <div className="flex items-center gap-6 pt-2">
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            onClick={() => setOpen(false)}
+            className="text-black"
+          >
+            <GithubIcon size={28} />
+          </a>
+          <a
+            href="mailto:sureshabhinav8@gmail.com"
+            aria-label="Email"
+            onClick={() => setOpen(false)}
+            className="text-black"
+          >
+            <MailIcon size={28} />
+          </a>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            onClick={() => setOpen(false)}
+            className="text-black"
+          >
+            <LinkedinIcon size={28} />
+          </a>
+        </div>
       </div>
     </>
   );
