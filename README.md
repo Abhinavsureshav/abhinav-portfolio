@@ -1,32 +1,13 @@
-# React + TypeScript + Vite
+# Abhinav AV - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio website for **Abhinav AV** (AI & Data Science).
 
-Currently, two official plugins are available:
+- **Live URL**: [https://abhinavsuresh.me](https://abhinavsuresh.me)
+- **GitHub**: [https://github.com/Abhinavsureshav](https://github.com/Abhinavsureshav)
+- **LinkedIn**: [https://www.linkedin.com/in/abhinav-av-0a2b97202](https://www.linkedin.com/in/abhinav-av-0a2b97202)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Featured Projects
+- **Little Learners**: Bilingual early-learning application for children under six.
+- **ParkXplore**: Real-time parking occupancy detection using YOLOv11 and computer vision.
+- **Emotion Detector**: Real-time facial emotion recognition using DeepFace and OpenCV.
+- **AASHVAS**: Smart wearable pain-relief band with IoT, AI-driven tracking, and mobile app.
