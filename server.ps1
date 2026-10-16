@@ -39,6 +39,7 @@ $mimeTypes = @{
     ".mjs"   = "application/javascript; charset=utf-8"
     ".css"   = "text/css; charset=utf-8"
     ".json"  = "application/json; charset=utf-8"
+    ".pdf"   = "application/pdf"
     ".png"   = "image/png"
     ".jpg"   = "image/jpeg"
     ".jpeg"  = "image/jpeg"
@@ -85,6 +86,10 @@ try {
             $response.ContentType = $contentType
             $response.AddHeader("Access-Control-Allow-Origin", "*")
             $response.AddHeader("Cache-Control", "no-cache, no-store, must-revalidate")
+
+            if ($ext -eq ".pdf") {
+                $response.AddHeader("Content-Disposition", "inline; filename=$([System.IO.Path]::GetFileName($filePath))")
+            }
 
             try {
                 $bytes = [System.IO.File]::ReadAllBytes($filePath)
